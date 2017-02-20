@@ -1,0 +1,22 @@
+{
+  "name": "webserver",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Alex y Carlos Olives"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/IH-Proyect2-Alex-Carlos/denunciad2",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "bootstrap": "^3.3.7"
+  }
+}
