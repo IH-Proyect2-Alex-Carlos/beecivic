@@ -1,8 +1,8 @@
 <div class="span3">
     <h2>Sign Up</h2>
-    <form>
+    <form method="post">
     <label>City</label>
-    <input type="text" name="firstname" class="span3">
+    <input type="text" name="city" class="span3">
     <label>Email Address</label>
     <input type="email" name="email" class="span3">
     <label>Username</label>
@@ -13,4 +13,8 @@
     <input type="submit" value="Sign up" class="btn btn-primary pull-right">
     <div class="clearfix"></div>
     </form>
+    <% if (typeof(message) != "undefined") { %>
+    <div class="error-message"><%= message %></div>
+  <% } %>
+  <br><br>
 </div>

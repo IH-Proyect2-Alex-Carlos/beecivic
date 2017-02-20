@@ -78,13 +78,13 @@ passport.use('local-signup', new LocalStrategy(
                 return next(null, false);
             } else {
                 // Destructure the body
-                const { username, email, description, password } = req.body;
+                const { city,email, username, password } = req.body;
                 const hashPass = bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
                 const newUser = new User({
-                  username,
-                  email,
-                  description,
-                  password: hashPass
+                  username: username,
+                  email: email,
+                  password: hashPass,
+                  city :city
                 });
                 newUser.save((err) => {
                     if (err){ next(err); }
@@ -116,8 +116,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 ///////////////////////////
-const index = require('./routes/index');
-app.use('/', index);
+// const index = require('./routes/index');
+// app.use('/', index);
 
 const users = require('./routes/users');
 app.use('/users', users);

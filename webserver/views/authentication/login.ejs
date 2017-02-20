@@ -38,7 +38,7 @@
 			    <form class="omb_loginForm" action="" autocomplete="off" method="POST">
 					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-user"></i></span>
-						<input type="text" class="form-control" name="username" placeholder="email address">
+						<input type="text" class="form-control" name="username" placeholder="username">
 					</div>
 					<span class="help-block"></span>
 
@@ -66,6 +66,9 @@
 		</div>
 	</div>
 
-
+  <% if (typeof(message) != "undefined") { %>
+      <div class="error-message"><%= message %></div>
+    <% } %>
+    <br><br>
 
         </div>

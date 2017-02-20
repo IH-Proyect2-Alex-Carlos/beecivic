@@ -1,26 +1,36 @@
 const express = require('express');
 const router  = express.Router();
 const passport      = require("passport");
+const { ensureLoggedIn, ensureLoggedOut } = require('connect-ensure-login');
 
-router.get('/login', (req, res) => {
+router.get('/login',ensureLoggedOut(), (req, res) => {
     res.render('authentication/login');
 });
 
-router.get('/signup', (req, res) => {
+router.get('/signup',ensureLoggedOut(), (req, res) => {
     res.render('authentication/signup');
 });
-router.post('/signup', passport.authenticate('local-signup', {
+router.post('/signup',ensureLoggedOut(), passport.authenticate('local-signup', {
   successRedirect : '../views/denuncias/show',
   failureRedirect : '/signup'
 }));
 
-router.post('/login', passport.authenticate('local-login', {
+router.post('/login',ensureLoggedOut(), passport.authenticate('local-login', {
   successRedirect : '../views/denuncias/show',
   failureRedirect : '/login'
 }));
 
-router.get('/logout', (req, res) => {
+router.get('/logout',ensureLoggedIn('/login'), (req, res) => {
     req.logout();
     res.redirect('/');
+});
+router.get('/logout',ensureLoggedIn('/login'), (req, res) => {
+    req.logout();
+    res.redirect('/');
+});
+
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('index');
 });
 module.exports = router;
