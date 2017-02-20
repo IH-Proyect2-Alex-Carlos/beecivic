@@ -50,9 +50,13 @@ app.use(passport.session());
 
 ///////////////////////////
 const index = require('./routes/index');
-const users = require('./routes/users');
 app.use('/', index);
+
+const users = require('./routes/users');
 app.use('/users', users);
+
+const authRoutes = require('./routes/authentication.js');
+app.use('/', authRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
