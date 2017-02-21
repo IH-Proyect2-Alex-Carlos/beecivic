@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 // const User = mongoose.model('User');
 const User = require('./user');
+const Picture = require('./pictures');//Actualizar en el modelo!!!
 
 const DenunciaSchema = new Schema({
   showName   : {type:String,required: true},

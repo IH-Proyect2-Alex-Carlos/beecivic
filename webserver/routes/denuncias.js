@@ -1,7 +1,9 @@
 const express      = require('express');
 const router       = express.Router();
 const passport     = require("passport");
+const  multer      = require('multer');
 const { ensureLoggedIn, ensureLoggedOut } = require('connect-ensure-login');
+const Picture      = require('../models/pictures');
 const Comment      = require('../models/comment');
 const Denuncia     = require('../models/denuncia');
 const User         = require('../models/user');
