@@ -1,0 +1,113 @@
+/*slide 8*/
+
+<div class="container-fluid">
+
+  <div class="row-fluid">
+
+    <form class="form-horizontal" action="/denuncias/new" method="post">
+
+<fieldset>
+
+<!-- Form Name -->
+
+<legend>Nueva denuncia</legend>
+
+<!-- Multiple Radios -->
+
+<div class="form-group">
+
+  <label class="col-md-4 control-label" for="radios">Visibilidad Denunciante</label>
+
+  <div class="col-md-4">
+
+  <div class="radio">
+
+    <label for="radios-0">
+
+      <input type="radio" name="radios" id="radios-0" value="1" checked="checked">
+
+      Público
+
+    </label>
+
+    </div>
+
+  <div class="radio">
+
+    <label for="radios-1">
+
+      <input type="radio" name="radios" id="radios-1" value="2">
+
+      Anónimo
+
+    </label>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+
+  <label class="col-md-4 control-label" for="textinput">Asunto</label>
+
+  <div class="col-md-4">
+
+  <input id="textinput" name="asunto" type="text" placeholder="placeholder" class="form-control input-md">
+
+  </div>
+
+</div>
+
+<!-- Textarea -->
+
+<div class="form-group">
+
+  <label class="col-md-4 control-label" for="textarea">Descripción</label>
+
+  <div class="col-md-4">
+
+    <textarea class="form-control" id="textarea" name="descripcion">default text</textarea>
+
+  </div>
+
+</div>
+
+<!-- Textarea -->
+
+<div class="form-group">
+
+  <label class="col-md-4 control-label" for="textarea">Descripción extensa</label>
+
+  <div class="col-md-4">
+
+    <textarea class="form-control" id="textarea" name="descripcion_extensa">default text</textarea>
+
+  </div>
+
+</div>
+
+<!-- Button -->
+
+<div class="form-group">
+
+  <label class="col-md-4 control-label" for="singlebutton">Denunciar</label>
+
+  <div class="col-md-4">
+
+    <button id="singlebutton" name="denunciar-button" class="btn btn-primary">Button</button>
+
+  </div>
+
+</div>
+
+</fieldset>
+
+</form>
+
+  </div><!-- /.row -->
+
+</div><!-- /.container -->
