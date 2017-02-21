@@ -1,16 +1,20 @@
 const express      = require('express');
-const Comment      = require('../models/comment');
-const Denuncia     = require('../models/denuncia');
-const User               = require('../models/user');
 const router       = express.Router();
 const passport     = require("passport");
 const { ensureLoggedIn, ensureLoggedOut } = require('connect-ensure-login');
-
+const Comment      = require('../models/comment');
+const Denuncia     = require('../models/denuncia');
+const User         = require('../models/user');
 
 ///////
 /////////////////Denuncias
 router.get('/show',ensureLoggedIn('/login'), (req, res) => {
-    res.render('denuncias/show');
+  Denuncia
+    .find({})
+    .populate('_creator')
+    .exec( (err, denuncias) => {
+        res.render('denuncias/show', { denuncias });
+    });
 });
 
 router.get('/new',ensureLoggedIn('/login'), (req, res) => {
@@ -18,15 +22,27 @@ router.get('/new',ensureLoggedIn('/login'), (req, res) => {
 });
 
 router.post('/new',ensureLoggedIn('/login'), (req, res) => {
-    let userComment = "";
-    console.log(req.body.username);
-    if(req.body.radio===1){userComment=req.body.username;} else{userComment="Anonymous";}
-    const asunto=req.body.asunto;
-    const descripcion =req.body.descripcion;
-    const descripcionAlt= req.body.descripcion_extensa;
-    console.log(userComment,asunto,descripcion,descripcionAlt);
-    console.log("HOLAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-    res.redirect('/denuncias/new');
+    let userType = "";
+    if(req.body.radios=="1"){userType=req.user.username;} else{userType="Anonymous";}
+    console.log(userType);
+    const newDenuncia = new Denuncia({
+      showName: userType,
+      subject:req.body.asunto,
+      description: req.body.descripcion,
+      fullDescription: req.body.descripcion_extensa,
+      //Falta LOCATION
+      _creator: req.user._id
+    });
+    console.log(newDenuncia);
+    newDenuncia.save( (err) => {
+          if (err) {
+             console.log(err);
+            res.render('denuncias/new', { denuncia: newDenuncia });
+          } else {
+              res.redirect('/denuncias/show');
+          }
+ });
+
 });
 // router.post('/show',ensureLoggedIn('/login'), (req, res) => {
 //     res.render('show');
