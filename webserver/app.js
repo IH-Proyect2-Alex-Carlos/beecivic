@@ -1,28 +1,29 @@
-const express = require('express');
-const path = require('path');
-const favicon = require('serve-favicon');
-const logger = require('morgan');
-const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
+const express            = require('express');
+const path               = require('path');
+const favicon            = require('serve-favicon');
+const logger             = require('morgan');
+const cookieParser       = require('cookie-parser');
+const bodyParser         = require('body-parser');
 const expressLayouts     = require('express-ejs-layouts');
 const mongoose           = require('mongoose');
 const passport           = require('passport');
 const session            = require('express-session');
 const MongoStore         = require('connect-mongo')(session);
+//Rutas
+const authRoutes = require('./routes/authentication.js');
+const denuncias = require('./routes/denuncias.js');
+///
+const LocalStrategy      = require('passport-local').Strategy;
+//Models HERE!
+const User               = require('./models/user');
+const Comment            = require('./models/comment');
+const Denuncia           = require('./models/denuncia');
+
+const bcrypt             = require('bcrypt');
 
 mongoose.connect('mongodb://localhost:27017/denuncia2');
 
 const app = express();
-
-///
-const LocalStrategy      = require('passport-local').Strategy;
-const bcrypt             = require('bcrypt');
-
-//Models HERE!
-const User               = require('./models/user');
-// const Comment               = require('./models/comment'); //For future User uncomment this
-// const Denuncia               = require('./models/denuncia'); //For future User uncomment this
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -49,7 +50,7 @@ app.use( (req, res, next) => { // This is for Check signed in
 });
 ///session and Strategy
 app.use(session({
-  secret: 'ironfundingdev',
+  secret: 'denuncia2',
   resave: false,
   saveUninitialized: true,
   store: new MongoStore( { mongooseConnection: mongoose.connection })
@@ -118,11 +119,10 @@ app.use(passport.session());
 ///////////////////////////
 // const index = require('./routes/index');
 // app.use('/', index);
-
-const users = require('./routes/users');
-app.use('/users', users);
-
-const authRoutes = require('./routes/authentication.js');
+//
+// const users = require('./routes/users');
+// app.use('/users', users);
+app.use('/denuncias', denuncias);
 app.use('/', authRoutes);
 
 // catch 404 and forward to error handler
