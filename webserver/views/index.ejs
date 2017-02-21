@@ -5,6 +5,9 @@
     <div class="page-header">
         <h3>Bootstrap</h3>
         <p>Responsive Moving Box Carousel Demo</p>
+        <% if(userPage){%>
+        <h1><%=userPage.username%></h1>
+      <%}%>
     </div>
 
     <div class="carousel slide" id="myCarousel">

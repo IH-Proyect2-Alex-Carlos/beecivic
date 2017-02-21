@@ -64,11 +64,16 @@ router.get('/:denuncia',ensureLoggedIn('/login'), (req, res) => {
 });
 
 
-router.get('/:denuncia/comment/new',ensureLoggedIn('/login'), (req, res) => {
-    res.render('comments/new');
+router.get('/:denuncia/comments/new',ensureLoggedIn('/login'), (req, res) => {
+  res.render('denuncias/comments/new');
+  // const id = req.params.denuncia;
+  //  Denuncia.findById(id, function (err, denunciaPage) {
+  //  if (err) return next(err);
+  //  res.render('comments/new', {denunciaPage});
+  // });
 });
 
-// router.post(':denuncia/comment/new', ensureLoggedIn('/login'), (req, res, next) => {//comentario nuevo
+// router.post(':denuncia/comments/new', ensureLoggedIn('/login'), (req, res, next) => {//comentario nuevo
 //   const newComment = new Comment({
 //     username : req.user.username,
 //     comment: req.body.comment,
