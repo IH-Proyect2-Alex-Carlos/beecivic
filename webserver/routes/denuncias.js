@@ -9,7 +9,12 @@ const User         = require('../models/user');
 ///////
 /////////////////Denuncias
 router.get('/show',ensureLoggedIn('/login'), (req, res) => {
-    res.render('denuncias/show');
+  Denuncia
+    .find({})
+    .populate('_creator')
+    .exec( (err, denuncias) => {
+        res.render('denuncias/show', { denuncias });
+    });
 });
 
 router.get('/new',ensureLoggedIn('/login'), (req, res) => {
@@ -18,14 +23,7 @@ router.get('/new',ensureLoggedIn('/login'), (req, res) => {
 
 router.post('/new',ensureLoggedIn('/login'), (req, res) => {
     let userType = "";
-    // console.log(req.user.username);
-    // console.log(req.body.radios);
     if(req.body.radios=="1"){userType=req.user.username;} else{userType="Anonymous";}
-    // const asunto=req.body.asunto;
-    // const descripcion =req.body.descripcion;
-    // const descripcionAlt= req.body.descripcion_extensa;
-    // const creator =req.user._id;
-    // console.log(userType,asunto,descripcion,descripcionAlt,creator);
     console.log(userType);
     const newDenuncia = new Denuncia({
       showName: userType,
