@@ -21,7 +21,7 @@
 
         <div class="collapse navbar-collapse" id="home-nav">
           <ul class="nav navbar-nav">
-            <li><a href="#">Subir una denuncia</a></li>
+            <li><a href="/denuncias/new">Subir una denuncia</a></li>
             <li class="nav-logo">
               <a href="#" class="nav-logo-link">
                 <h1>denuncia2</h1>
@@ -34,9 +34,10 @@
                 <span class="glyphicon glyphicon-search"></span>
               </a>
             </li>
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Signup</a></li>
-            <li><a href="#">Profile</a></li>
+            <li><% if(userPage){%>
+            <h1><%=userPage.username%></h1>
+            <%}else{%><a href="/login">Login</a></li>
+            <li><a href="/signup">Signup</a></li><%}%>
           </ul>
         </div>
       </div>
