@@ -8,6 +8,7 @@ const User         = require('../models/user');
 
 ///////
 /////////////////Denuncias
+//SHOW LIST OF DENUNCIAS
 router.get('/show',ensureLoggedIn('/login'), (req, res) => {
   Denuncia
     .find({})
@@ -55,7 +56,11 @@ router.post('/new',ensureLoggedIn('/login'), (req, res) => {
 // });
 
 router.get('/:denuncia',ensureLoggedIn('/login'), (req, res) => {
-    res.render('denuncia');
+  const id = req.params.denuncia;
+   Denuncia.findById(id, function (err, denunciaPage) {
+   if (err) return next(err);
+   res.render('denuncias/denuncia', {denunciaPage});
+  });
 });
 
 

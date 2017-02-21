@@ -1,1 +1,13 @@
 
+<div >
+    <h3 >Listado Denuncias</h3>
+    <% denuncias.forEach((denuncia) => { %>
+        <img src="<%= denuncia.imgUrl %>">
+          <a href="/denuncias/<%=denuncia._id%>">Read More</a>
+            <strong><%= denuncia.subject %></strong>
+          by <span ><%= denuncia.showName %></span><br>
+          <span ><%= denuncia.description %></span>
+        </div>
+      </div>
+    <%  }) %>
+  </div>
