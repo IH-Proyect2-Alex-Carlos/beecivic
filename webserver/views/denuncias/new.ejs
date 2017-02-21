@@ -1,67 +1,111 @@
-/*slide 8*/
-
 <div class="container-fluid">
   <div class="row-fluid">
-    <form class="form-horizontal">
+
+    <form class="form-horizontal" action="/denuncias/new" method="post">
+
 <fieldset>
 
 <!-- Form Name -->
-<legend>Form Name</legend>
+
+<legend>Nueva denuncia</legend>
 
 <!-- Multiple Radios -->
+
 <div class="form-group">
-  <label class="col-md-4 control-label" for="radios">Multiple Radios</label>
+
+  <label class="col-md-4 control-label" for="radios">Visibilidad Denunciante</label>
+
   <div class="col-md-4">
+
   <div class="radio">
+
     <label for="radios-0">
+
       <input type="radio" name="radios" id="radios-0" value="1" checked="checked">
-      Option one
+
+      Público
+
     </label>
-	</div>
+
+    </div>
+
   <div class="radio">
+
     <label for="radios-1">
+
       <input type="radio" name="radios" id="radios-1" value="2">
-      Option two
+
+      Anónimo
+
     </label>
-	</div>
+
+    </div>
+
   </div>
+
 </div>
 
 <!-- Text input-->
+
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Text Input</label>
+
+  <label class="col-md-4 control-label" for="textinput">Asunto</label>
+
   <div class="col-md-4">
-  <input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md">
-  <span class="help-block">help</span>
+
+  <input id="textinput" name="asunto" type="text" placeholder="placeholder" class="form-control input-md">
+
   </div>
+
 </div>
 
 <!-- Textarea -->
+
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textarea">Text Area</label>
+
+  <label class="col-md-4 control-label" for="textarea">Descripción</label>
+
   <div class="col-md-4">
-    <textarea class="form-control" id="textarea" name="textarea">default text</textarea>
+
+    <textarea class="form-control" id="textarea" name="descripcion">default text</textarea>
+
   </div>
+
 </div>
 
 <!-- Textarea -->
+
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textarea">Text Area</label>
+
+  <label class="col-md-4 control-label" for="textarea">Descripción extensa</label>
+
   <div class="col-md-4">
-    <textarea class="form-control" id="textarea" name="textarea">default text</textarea>
+
+    <textarea class="form-control" id="textarea" name="descripcion_extensa">default text</textarea>
+
   </div>
+
 </div>
 
 <!-- Button -->
+
 <div class="form-group">
-  <label class="col-md-4 control-label" for="singlebutton">Single Button</label>
+
+  <label class="col-md-4 control-label" for="singlebutton">Denunciar</label>
+
   <div class="col-md-4">
-    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Button</button>
+
+    <button id="singlebutton" name="denunciar-button" class="btn btn-primary">Button</button>
+
   </div>
+
 </div>
 
 </fieldset>
+
 </form>
 
   </div><!-- /.row -->
+
+
 </div><!-- /.container -->
