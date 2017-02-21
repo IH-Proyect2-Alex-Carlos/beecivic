@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
+// const User = mongoose.model('User');
+const User = require('./user');
 
 const DenunciaSchema = new Schema({
   user   : [{ type: Schema.Types.ObjectId, ref: 'User' }],
@@ -14,5 +16,5 @@ const DenunciaSchema = new Schema({
 });
 
 const Denuncia = mongoose.model('Denuncia', DenunciaSchema);
-const User = mongoose.model('User');
-module.exports = Comment;
+
+module.exports = Denuncia;
