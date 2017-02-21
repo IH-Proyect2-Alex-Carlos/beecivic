@@ -13,7 +13,7 @@ router.get('/signup',ensureLoggedOut(), (req, res) => {
     res.render('authentication/signup');
 });
 router.post('/signup',ensureLoggedOut(), passport.authenticate('local-signup', {
-  successRedirect : './denuncias/:user/show',
+  successRedirect : '/denuncias/show',
   failureRedirect : '/signup'
 }));
 
