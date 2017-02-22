@@ -7,6 +7,9 @@
     <div class="page-header">
         <h3>Denuncias</h3>
         <p>Listado de las últimas denuncias</p>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/">Logout</a></li>
+        </ul>
     </div>
     <% denuncias.forEach((denuncia) => { %>
 
@@ -24,10 +27,19 @@
                     			      <p><%= denuncia.description %></p>
                                 <a href="/denuncias/<%=denuncia._id%>">Read More</a>
                             </div>
-                        </li>
+                            <div class="control-box">
+                                <a data-slide="prev" href="#myCarousel" class="carousel-control left">‹</a>
+                                <a data-slide="next" href="#myCarousel" class="carousel-control right">›</a>
+                            </div><!-- /.control-box -->
+                      </ul>
+
+                  </li>
+            </div>
+        </div>
 
     </div><!-- /#myCarousel -->
   <%  }) %>
+
 </div><!-- /.span12 -->
 </div><!-- /.row -->
 </div><!-- /.container -->

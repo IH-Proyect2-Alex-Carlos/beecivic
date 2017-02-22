@@ -1,18 +1,38 @@
+      <div class="container-fluid">
+      <div class="row-fluid">
+      <div class="span12">
 
-
-      By: <strong><%= denunciaPage.showName %></strong>
-
-      <h1><%= denunciaPage.subject %></h1>
-      <h2 ><%= denunciaPage.description %></h2>
-      <p ><%= denunciaPage.fullDescription %></p>
-      <img src="<%= denunciaPage.imgUrl %>">
-      <span >$<%= denunciaPage.resolved %></span><br>
-      <a href="<%= denunciaPage._id %>/comments/new"> AÑADIR COMENTARIO</a>
-
-      <h3 >Listado Comentarios</h3>
-      <section><% comentarios.forEach((comentario) => { %>
-           <strong><%= comentario.username %></strong>
-          <p><%= comentario.comment %></p><br>
-          <H4><%= comentario.created_at %></H4><br>
-   <%  }) %>
-      </section>
+          <div class="page-header">
+              <h3><%= denunciaPage.subject %></h3>
+          </div>
+          <strong><%= denunciaPage.showName %></strong>
+          <h2 ><%= denunciaPage.description %></h2>
+          <p ><%= denunciaPage.fullDescription %></p>
+          <img src="<%= denunciaPage.imgUrl %>">
+          <span >$<%= denunciaPage.resolved %></span><br>
+          <a href="<%= denunciaPage._id %>/comments/new"> AÑADIR COMENTARIO</a>
+          <h3 >Listado Comentarios</h3>
+          <% comentarios.forEach((comentario) => { %>
+            <div class="carousel slide" id="myCarousel">
+                <div class="carousel-inner">
+                    <div class="item active">
+                          <ul class="thumbnails">
+                              <li class="span3">
+                                  <div class="caption">
+                                      <h4><strong><%= comentario.username %></strong></h4>
+                                      <p><%= comentario.comment %></p><br>
+                                      <H4><%= comentario.created_at %></H4><br>
+                                  </div>
+                              </li>
+                          </ul>
+                    </div>
+              </div>
+            </div><!-- /#myCarousel -->
+          <%  }) %>
+          <div class="control-box">
+            <a data-slide="prev" href="#myCarousel" class="carousel-control left">‹</a>
+            <a data-slide="next" href="#myCarousel" class="carousel-control right">›</a>
+          </div><!-- /.control-box -->
+      </div><!-- /.span12 -->
+      </div><!-- /.row -->
+      </div><!-- /.container -->

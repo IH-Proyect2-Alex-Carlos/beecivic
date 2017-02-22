@@ -32,7 +32,7 @@ router.post('/new',ensureLoggedIn('/login'), (req, res) => {
       showName: userType,
       subject:req.body.asunto,
       description: req.body.descripcion,
-      fullDescription: req.body.descripcion_extensa,
+      fullDescription: req.body.descripcionExtensa,
       //Falta LOCATION
       _creator: req.user._id
     });
