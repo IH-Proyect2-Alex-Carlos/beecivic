@@ -6,9 +6,9 @@ body {
 }
 h1{
   font-family: sans-serif;
-  font-size: 38px;
+  font-size: 48px;
   color: 	#cd6677;
-  margin-left: 130%;
+  margin-left: 70%;
 
 }
 img { max-width:100%; }
@@ -32,7 +32,7 @@ a {
 .container-fluid {
     background: #FFFFFF;
     margin: 40px auto 10px;
-    padding: 20px 40px 0;
+    padding: 20px 40px 10px;
     max-width: 960px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
@@ -193,4 +193,29 @@ input::-moz-focus-inner { border: 0; }
         text-align: right;
 		margin-top:10px;
  	}
+}
+.container{
+    margin-top:20px;
+}
+.image-preview-input {
+    position: relative;
+	overflow: hidden;
+	margin: 0px;
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+.image-preview-input input[type=file] {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.image-preview-input-title {
+    margin-left:2px;
 }
