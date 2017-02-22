@@ -1,13 +1,16 @@
 const express      = require('express');
 const router       = express.Router();
 const passport     = require("passport");
+const  multer      = require('multer');
 const { ensureLoggedIn, ensureLoggedOut } = require('connect-ensure-login');
+const Picture      = require('../models/pictures');
 const Comment      = require('../models/comment');
 const Denuncia     = require('../models/denuncia');
 const User         = require('../models/user');
 
 ///////
 /////////////////Denuncias
+//SHOW LIST OF DENUNCIAS
 router.get('/show',ensureLoggedIn('/login'), (req, res) => {
   Denuncia
     .find({})
@@ -44,43 +47,53 @@ router.post('/new',ensureLoggedIn('/login'), (req, res) => {
  });
 
 });
-// router.post('/show',ensureLoggedIn('/login'), (req, res) => {
-//     res.render('show');
-//     Denuncia
-//     .find({})
-//     .populate('creator')
-//     .exec( (err, denuncias) => {
-//         res.render('index', { denuncias });
-//     });
-// });
 
 router.get('/:denuncia',ensureLoggedIn('/login'), (req, res) => {
-    res.render('denuncia');
+  const id = req.params.denuncia;
+   Denuncia.findById(id, function (err, denunciaPage) {
+   if (err) return next(err);
+    Comment
+      .find({"denuncia" : id})
+      .populate('createdAt')
+      .exec( (err, comentarios) => {
+        if (err) {
+          res.render('denuncias/denuncia', {denunciaPage});
+        } else {
+            res.render('denuncias/denuncia', { denunciaPage ,comentarios});
+        }
+    });
+
+  });
 });
 
 
-router.get('/:denuncia/comment/new',ensureLoggedIn('/login'), (req, res) => {
-    res.render('comments/new');
+router.get('/:denuncia/comments/new',ensureLoggedIn('/login'), (req, res) => {
+  res.render('denuncias/comments/new');
 });
 
-// router.post(':denuncia/comment/new', ensureLoggedIn('/login'), (req, res, next) => {//comentario nuevo
-//   const newComment = new Comment({
-//     username : req.user.username,
-//     comment: req.body.comment,
-//     // denuncia: req.denuncia._id,
-//     numComment: req.body.numComment
-//     // We're assuming a user is logged in here
-//     // If they aren't, this will throw an error
-//     // creator: req.user._id
-//   });
-//   newComment.save( (err) => {
-//     if (err) {
-//       res.render('comments/new', { denuncia: newComment });
-//     } else {
-//       res.redirect(`/denuncias/${denuncia._id}`);
-//     }
-//   });
-// });
+router.post('/:denuncia/comments/new', ensureLoggedIn('/login'), (req, res, next) => {//comentario nuevo
+  let userType = "";
+  const id = req.params.denuncia;
+  if(req.body.radios=="1"){userType=req.user.username;} else{userType="Anonymous";}
+  //countComment=Denuncia.count(id); //Valdrá para el pintado
+  const newComment = new Comment({
+    username : userType,
+    comment: req.body.comentario,
+    denuncia: id,
+    _creator :req.user._id,
+  });
+  console.log(newComment);
+
+  newComment.save( (err) => {
+        if (err) {
+           console.log(err);
+          res.render('comments/new');
+        } else {
+            res.redirect(`/denuncias/${id}`);
+        }
+});
+
+});
 
 ////////////
 
