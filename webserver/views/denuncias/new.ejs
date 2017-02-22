@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row-fluid">
 
-    <form class="form-horizontal" action="/denuncias/new" method="post">
+    <form class="form-horizontal" enctype="multipart/form-data" action="/denuncias/new" method="post">
 
 <fieldset>
 
@@ -71,7 +71,7 @@
 
   <label class="col-md-4 control-label" for="textarea">Descripción extensa</label>
   <div class="col-md-4">
-    <textarea class="form-control" id="textarea" name="descripcion-extensa">default text</textarea>
+    <textarea class="form-control" id="textarea" name="descripcionExtensa">default text</textarea>
 
   </div>
 
@@ -91,7 +91,7 @@
                     <div class="btn btn-default image-preview-input">
                         <span class="glyphicon glyphicon-folder-open"></span>
                         <span class="image-preview-input-title">Browse</span>
-                        <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
+                        <input type="file" accept="image/png, image/jpeg, image/gif" name="file">
                     </div>
                 </span>
             </div><!-- /input-group image-preview [TO HERE]-->

@@ -8,7 +8,7 @@ const DenunciaSchema = new Schema({
   showName   : {type:String,required: true},
   subject: {type:String,required: true},
   description   : {type:String,required: true},
-  fullDescription :{type:String},
+  fullDescription :{type:String,required: true},
   imgUrl    : { type: String, default: "https://placeholdit.imgix.net/~text?txtsize=33&txt=250%C3%97250&w=250&h=250",required: true },
   // location: { type: { type: String }, coordinates: [Number] ,default:"" },
   resolved : {type:Boolean,default: false ,required: true},
