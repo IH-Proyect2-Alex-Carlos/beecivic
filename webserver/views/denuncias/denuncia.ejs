@@ -7,4 +7,11 @@
       <img src="<%= denunciaPage.imgUrl %>">
       <span >$<%= denunciaPage.resolved %></span><br>
       <a href="<%= denunciaPage._id %>/comments/new"> AÑADIR COMENTARIO</a>
-  
+
+      <h3 >Listado Comentarios</h3>
+      <section><% comentarios.forEach((comentario) => { %>
+           <strong><%= comentario.username %></strong>
+          <p><%= comentario.comment %></p><br>
+          <H4><%= comentario.created_at %></H4><br>
+   <%  }) %>
+      </section>
