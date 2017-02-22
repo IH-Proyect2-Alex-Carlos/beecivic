@@ -31,11 +31,8 @@ router.get('/logout',ensureLoggedIn('/login'), (req, res) => {
     res.redirect('/');
 });
 
+/* GET home page. */
 router.get('/', function(req, res, next) {
-  if (req.user !=="undefined"){
-      res.render('index',{userPage: req.user });
-  }
-  else{res.render('index');}
-
+  res.render('index');
 });
 module.exports = router;
