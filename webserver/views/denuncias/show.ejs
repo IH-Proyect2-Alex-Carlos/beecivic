@@ -1,45 +1,29 @@
-
-
 <div class="container-fluid">
-<div class="row-fluid">
-<div class="span12">
+    <div class="row-fluid">
+        <div class="col-md-12">
+          <div class="page-header">
+              <h3>Denuncias</h3>
+              <p>Listado de las últimas denuncias</p>
+          </div>
+            <% denuncias.forEach((denuncia) => { %>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="post">
+                        <h2><%= denuncia.subject %></h2>
+                        <div class="post-header well well-sm">
+                            <span class="post-author vcard">Posted by <%= denuncia.showName %></span>
 
-    <div class="page-header">
-        <h3>Denuncias</h3>
-        <p>Listado de las últimas denuncias</p>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="/">Logout</a></li>
-        </ul>
-    </div>
-    <% denuncias.forEach((denuncia) => { %>
+                        </div>
+                        <div>
+                        <span class="thumbnail" style="float:left; margin-right: 10px;"><img src="<%= denuncia.imgUrl %>"alt="" class="img-responsive" width="300px" height="200px"></span>
 
-    <div class="carousel slide" id="myCarousel">
-        <div class="carousel-inner">
-            <div class="item active">
-                    <ul class="thumbnails">
-                        <li class="span3">
-                            <div class="thumbnail">
-                                <a href="#"><img src="<%= denuncia.imgUrl %>"alt=""></a>
-                            </div>
-                            <div class="caption">
-                                <h4><%= denuncia.subject %></h4>
-                                <span ><%= denuncia.showName %></span>
-                    			      <p><%= denuncia.description %></p>
-                                <a href="/denuncias/<%=denuncia._id%>">Read More</a>
-                            </div>
-                            <div class="control-box">
-                                <a data-slide="prev" href="#myCarousel" class="carousel-control left">‹</a>
-                                <a data-slide="next" href="#myCarousel" class="carousel-control right">›</a>
-                            </div><!-- /.control-box -->
-                      </ul>
-
-                  </li>
+                        <p><%= denuncia.description %></p>
+                        </div>
+                        <a class="btn btn-primary" href="/denuncias/<%=denuncia._id%>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+                    </div>
+                </div>
             </div>
+            <%  }) %>
         </div>
-
-    </div><!-- /#myCarousel -->
-  <%  }) %>
-
-</div><!-- /.span12 -->
-</div><!-- /.row -->
-</div><!-- /.container -->
+    </div>
+</div>

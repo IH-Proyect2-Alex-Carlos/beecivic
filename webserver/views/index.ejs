@@ -1,13 +1,41 @@
+<!--<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="col-md-12">
+          <div class="page-header">
+              <h3>Denuncias</h3>
+              <p>Listado de las últimas denuncias</p>
+          </div>
+            <% denuncias.forEach((denuncia) => { %>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="post">
+                        <h2><%= denuncia.subject %></h2>
+                        <div class="post-header well well-sm">
+                            <span class="post-author vcard">Posted by <%= denuncia.showName %></span>
+
+                        </div>
+                        <div>
+                        <span class="thumbnail" style="float:left; margin-right: 10px;"><img src="<%= denuncia.imgUrl %>"alt="" class="img-responsive" width="300px" height="200px"></span>
+
+                        <p><%= denuncia.description %></p>
+                        </div>
+                        <a class="btn btn-primary" href="/denuncias/<%=denuncia._id%>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+                    </div>
+                </div>
+            </div>
+            <%  }) %>
+        </div>
+    </div>
+</div>-->
 <div class="container-fluid">
 <div class="row-fluid">
 <div class="span12">
 
     <div class="page-header">
-
         <h3>Denuncias</h3>
         <p>Listado de las últimas denuncias</p>
-
     </div>
+    <% denuncias.forEach((denuncia) => { %>
 
     <div class="carousel slide" id="myCarousel">
         <div class="carousel-inner">
@@ -15,155 +43,27 @@
                     <ul class="thumbnails">
                         <li class="span3">
                             <div class="thumbnail">
-                                <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+                                <a href="#"><img src="<%= denuncia.imgUrl %>"alt=""></a>
                             </div>
                             <div class="caption">
-                                <h4>Praesent commodo</h4>
-                    			<p>Nullam Condimentum Nibh Etiam Sem</p>
-                                <a class="btn btn-mini" href="#">» Read More</a>
+                                <h4><%= denuncia.subject %></h4>
+                                <span ><%= denuncia.showName %></span>
+                    			      <p><%= denuncia.description %></p>
+                                <a href="/denuncias/<%=denuncia._id%>">Read More</a>
                             </div>
-                        </li>
-                        <li class="span3">
-                            <div class="thumbnail">
-                                <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
-                            </div>
-                            <div class="caption">
-                                <h4>Praesent commodo</h4>
-                				<p>Nullam Condimentum Nibh Etiam Sem</p>
-                                <a class="btn btn-mini" href="#">» Read More</a>
-                            </div>
-                        </li>
-                        <li class="span3">
-                            <div class="thumbnail">
-                                <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
-                            </div>
-                            <div class="caption">
-                                <h4>Praesent commodo</h4>
-                				<p>Nullam Condimentum Nibh Etiam Sem</p>
-                                <a class="btn btn-mini" href="#">» Read More</a>
-                            </div>
-                        </li>
-                        <li class="span3">
-                            <div class="thumbnail">
-                                <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
-                            </div>
-                            <div class="caption">
-                                <h4>Praesent commodo</h4>
-                				<p>Nullam Condimentum Nibh Etiam Sem</p>
-                                <a class="btn btn-mini" href="#">» Read More</a>
-                            </div>
-                        </li>
-                    </ul>
-              </div><!-- /Slide1 -->
-            <div class="item">
-                    <ul class="thumbnails">
-                        <li class="span3">
-                            <div class="thumbnail">
-                                <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
-                            </div>
-                            <div class="caption">
-                                <h4>Praesent commodo</h4>
-                				<p>Nullam Condimentum Nibh Etiam Sem</p>
-                                <a class="btn btn-mini" href="#">» Read More</a>
-                            </div>
-                        </li>
-                        <li class="span3">
-                            <div class="thumbnail">
-                                <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
-                            </div>
-                            <div class="caption">
-                                <h4>Praesent commodo</h4>
-                				<p>Nullam Condimentum Nibh Etiam Sem</p>
-                                <a class="btn btn-mini" href="#">» Read More</a>
-                            </div>
-                        </li>
-                        <li class="span3">
-                            <div class="thumbnail">
-                                <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
-                            </div>
-                            <div class="caption">
-                                <h4>Praesent commodo</h4>
-                				<p>Nullam Condimentum Nibh Etiam Sem</p>
-                                <a class="btn btn-mini" href="#">» Read More</a>
-                            </div>
-                        </li>
-                        <li class="span3">
-                            <div class="thumbnail">
-                                <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
-                            </div>
-                            <div class="caption">
-                                <h4>Praesent commodo</h4>
-                				<p>Nullam Condimentum Nibh Etiam Sem</p>
-                                <a class="btn btn-mini" href="#">» Read More</a>
-                            </div>
-                        </li>
-                    </ul>
-              </div><!-- /Slide2 -->
-            <div class="item">
-                    <ul class="thumbnails">
-                        <li class="span3">
-                            <div class="thumbnail">
-                                <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
-                            </div>
-                            <div class="caption">
-                                <h4>Praesent commodo</h4>
-                				<p>Nullam Condimentum Nibh Etiam Sem</p>
-                                <a class="btn btn-mini" href="#">» Read More</a>
-                            </div>
-                        </li>
-                        <li class="span3">
-                            <div class="thumbnail">
-                                <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
-                            </div>
-                            <div class="caption">
-                                <h4>Praesent commodo</h4>
-                				<p>Nullam Condimentum Nibh Etiam Sem</p>
-                                <a class="btn btn-mini" href="#">» Read More</a>
-                            </div>
-                        </li>
-                        <li class="span3">
-                            <div class="thumbnail">
-                                <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
-                            </div>
-                            <div class="caption">
-                                <h4>Praesent commodo</h4>
-                				<p>Nullam Condimentum Nibh Etiam Sem</p>
-                                <a class="btn btn-mini" href="#">» Read More</a>
-                            </div>
-                        </li>
-                        <li class="span3">
-                            <div class="thumbnail">
-                                <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
-                            </div>
-                            <div class="caption">
-                                <h4>Praesent commodo</h4>
-                				<p>Nullam Condimentum Nibh Etiam Sem</p>
-                                <a class="btn btn-mini" href="#">» Read More</a>
-                            </div>
-                        </li>
-                    </ul>
-              </div><!-- /Slide3 -->
+                            <div class="control-box">
+                                <a data-slide="prev" href="#myCarousel" class="carousel-control left">‹</a>
+                                <a data-slide="next" href="#myCarousel" class="carousel-control right">›</a>
+                            </div><!-- /.control-box -->
+                      </ul>
+
+                  </li>
+            </div>
         </div>
 
-        <div class="control-box">
-            <a data-slide="prev" href="#myCarousel" class="carousel-control left">‹</a>
-            <a data-slide="next" href="#myCarousel" class="carousel-control right">›</a>
-        </div><!-- /.control-box -->
-
     </div><!-- /#myCarousel -->
+  <%  }) %>
 
 </div><!-- /.span12 -->
 </div><!-- /.row -->
 </div><!-- /.container -->
-
-
-<!-- Delete This -->
-<div class="footer">
-<a href="http://simonalex.com/">♥ Redfrost</a> | <a href="http://twitter.github.com/bootstrap/">Get Bootstrap</a> | <a href="http://placehold.it/">Get Placeholder</a>
-    <p class="right">‹ Resize Window ›</p>
-    <p> </p>
-    <p><strong>*VISIT THIS LINK FOR IE9 FIX: <a href="http://codepen.io/redfrost/pen/yKAmc"  target="_blank">http://codepen.io/redfrost/pen/yKAmc</a>
-
-
-<strong></p>
-</div>
