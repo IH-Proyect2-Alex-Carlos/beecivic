@@ -1,5 +1,4 @@
 
-
 /* Global */
 body {
     background: #F5BE62;
@@ -7,15 +6,16 @@ body {
     color:#13C25B;
 }
 
+
 p{
 	color:#279C78;
+
 }
 h1{
   font-family: sans-serif;
   font-size: 48px;
   color: 	#13C25B;
   margin-left: 70%;
-
 }
 img { max-width:100%; }
 #map {
@@ -23,13 +23,14 @@ img { max-width:100%; }
   width: 100%;
  }
 a {
+
 	color:#279C78;
     -webkit-transition: all 150ms ease;
-	-moz-transition: all 150ms ease;
-	-ms-transition: all 150ms ease;
-	-o-transition: all 150ms ease;
-	transition: all 150ms ease;
-	}
+    -moz-transition: all 150ms ease;
+    -ms-transition: all 150ms ease;
+    -o-transition: all 150ms ease;
+    transition: all 150ms ease;
+    }
     a:hover {
     	color:#C28113;
         -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /* IE 8 */
@@ -37,8 +38,6 @@ a {
         opacity: 0.6;
         text-decoration: none;
     }
-
-
 /* Container */
 .container-fluid {
     background: #FFFFFF;
@@ -47,8 +46,6 @@ a {
     max-width: 960px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
-
-
 /* Page Header */
 .page-header {
     background: #f9f9f9;
@@ -63,8 +60,6 @@ a {
         color: #279C78;
         }
 
-
-
 /* Mobile Only */
 @media (max-width: 767px) {
     .page-header, .control-box {
@@ -77,6 +72,7 @@ a {
     }
 }
 .btn{
+
 	border:none;
 	color:#8F3300;
 	background-color:#f9f9f9;
@@ -94,96 +90,94 @@ body:after{content:"less than 320px";font-size:1rem;font-weight:bold;position:fi
 ::selection { background: #F5BE62; color: #FFFFFF; text-shadow: 0; }
 ::-moz-selection { background: #F5BE62; color: #FFFFFF; }
 
+
+/* ADD-ON
+-------------------------------------------------- */
+body:after{content:"less than 320px";font-size:1rem;font-weight:bold;position:fixed;bottom:0;width:100%;text-align:center;background-color:hsla(1,60%,40%,0.7);color:#fff;height:20px;padding-top:0;margin-left:0;left:0}@media only screen and (min-width:320px){body:after{content:"320 to 480px";background-color:hsla(90,60%,40%,0.7);height:20px;padding-top:0;margin-left:0}}@media only screen and (min-width:480px){body:after{content:"480 to 768px";background-color:hsla(180,60%,40%,0.7);height:20px;padding-top:0;margin-left:0}}@media only screen and (min-width:768px){body:after{content:"768 to 980px";background-color:hsla(270,60%,40%,0.7);height:20px;padding-top:0;margin-left:0}}@media only screen and (min-width:980px){body:after{content:"980 to 1024px";background-color:hsla(300,60%,40%,0.7);height:20px;padding-top:0;margin-left:0}}@media only screen and (min-width:1024px){body:after{content:"1024 and up";background-color:hsla(360,60%,40%,0.7);height:20px;padding-top:0;margin-left:0}}
+::selection { background: #F5BE62; color: #FFFFFF; text-shadow: 0; }
+::-moz-selection { background: #F5BE62; color: #FFFFFF; }
 a, a:focus, a:active, a:hover, object, embed { outline: none; }
 :-moz-any-link:focus { outline: none; }
 input::-moz-focus-inner { border: 0; }
-
 /*  CSS FOR LOGIN*/
 @media (min-width: 768px) {
     .omb_row-sm-offset-3 div:first-child[class*="col-"] {
         margin-left: 25%;
     }
 }
-
 .omb_login .omb_authTitle {
     text-align: center;
-	line-height: 300%;
+    line-height: 300%;
 }
-
 .omb_login .omb_socialButtons a {
-	color: white; // In yourUse @body-bg
-	opacity:0.9;
+    color: white; // In yourUse @body-bg
+    opacity:0.9;
 }
 .omb_login .omb_socialButtons a:hover {
     color: white;
-	opacity:1;
+    opacity:1;
 }
 .omb_login .omb_socialButtons .omb_btn-facebook {background: #3b5998;}
 .omb_login .omb_socialButtons .omb_btn-twitter {background: #00aced;}
 .omb_login .omb_socialButtons .omb_btn-google {background: #c32f10;}
-
-
 .omb_login .omb_loginOr {
-	position: relative;
-	font-size: 1.5em;
-	color: #aaa;
-	margin-top: 1em;
-	margin-bottom: 1em;
-	padding-top: 0.5em;
-	padding-bottom: 0.5em;
+    position: relative;
+    font-size: 1.5em;
+    color: #aaa;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
 }
 .omb_login .omb_loginOr .omb_hrOr {
-	background-color: #cdcdcd;
-	height: 1px;
-	margin-top: 0px !important;
-	margin-bottom: 0px !important;
+    background-color: #cdcdcd;
+    height: 1px;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
 }
 .omb_login .omb_loginOr .omb_spanOr {
-	display: block;
-	position: absolute;
-	left: 50%;
-	top: -0.6em;
-	margin-left: -1.5em;
-	background-color: white;
-	width: 3em;
-	text-align: center;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: -0.6em;
+    margin-left: -1.5em;
+    background-color: white;
+    width: 3em;
+    text-align: center;
 }
-
 .omb_login .omb_loginForm .input-group.i {
-	width: 2em;
+    width: 2em;
 }
 .omb_login .omb_loginForm  .help-block {
     color: red;
 }
-
-
 @media (min-width: 768px) {
     .omb_login .omb_forgotPwd {
         text-align: right;
-		margin-top:10px;
- 	}
+        margin-top:10px;
+    }
 }
 .container{
     margin-top:20px;
 }
 .image-preview-input {
     position: relative;
-	overflow: hidden;
-	margin: 0px;
+    overflow: hidden;
+    margin: 0px;
     color: #333;
     background-color: #fff;
     border-color: #ccc;
 }
 .image-preview-input input[type=file] {
-	position: absolute;
-	top: 0;
-	right: 0;
-	margin: 0;
-	padding: 0;
-	font-size: 20px;
-	cursor: pointer;
-	opacity: 0;
-	filter: alpha(opacity=0);
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
 }
 .image-preview-input-title {
     margin-left:2px;

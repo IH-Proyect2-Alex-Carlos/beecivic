@@ -1,53 +1,29 @@
 <div class="container-fluid">
-
     <div class="row-fluid">
-
         <div class="col-md-12">
-
           <div class="page-header">
-
               <h3>Denuncias</h3>
-
               <p>Listado de las últimas denuncias</p>
-
           </div>
-
             <% denuncias.forEach((denuncia) => { %>
-
             <div class="panel panel-default">
-
                 <div class="panel-body">
-
                     <div class="post">
-
                         <h2><%= denuncia.subject %></h2>
-
                         <div class="post-header well well-sm">
-
                             <span class="post-author vcard">Posted by <%= denuncia.showName %></span>
 
                         </div>
-
                         <div>
-
                         <span class="thumbnail" style="float:left; margin-right: 10px;"><img src="<%= denuncia.imgUrl %>"alt="" class="img-responsive" width="300px" height="200px"></span>
 
                         <p><%= denuncia.description %></p>
-
                         </div>
-
                         <a class="btn btn-primary" href="/denuncias/<%=denuncia._id%>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
-
                     </div>
-
                 </div>
-
             </div>
-
             <%  }) %>
-
         </div>
-
     </div>
-
 </div>

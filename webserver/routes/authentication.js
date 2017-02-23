@@ -29,6 +29,7 @@ router.post('/login',ensureLoggedOut(), passport.authenticate('local-login', {
 router.get('/logout',ensureLoggedIn('/login'), (req, res) => {
     req.logout();
     res.redirect('/');
+
 });
 
 /* GET home page. */
