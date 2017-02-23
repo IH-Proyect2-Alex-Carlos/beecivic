@@ -2,7 +2,7 @@ const express = require('express');
 const router  = express.Router();
 const passport      = require("passport");
 const { ensureLoggedIn, ensureLoggedOut } = require('connect-ensure-login');
-
+const Denuncia     = require('../models/denuncia');
 
 /////LOGIN Y SIGNUP
 router.get('/login',ensureLoggedOut(), (req, res) => {
@@ -34,6 +34,16 @@ router.get('/logout',ensureLoggedIn('/login'), (req, res) => {
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index');
+});
 
+router.get('/map',ensureLoggedIn('/login'), (req, res) => {
+  Denuncia
+    .find({})
+    .exec( (err, denunciaList) => {
+        res.render('map', { denunciaList });
+    });
+    // var denunciaList= Denuncia.find();
+    // console.log(denunciaList);
+    // res.render('map',{denunciaList});
 });
 module.exports = router;

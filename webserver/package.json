@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www",
+    "start": "nodem ./bin/www",
+    "start-dev": "nodemon ./bin/www",
     "debug": "nodemon --inspect --debug ./bin/www"
   },
   "dependencies": {
@@ -14,7 +15,9 @@
     "connect-mongo": "^1.3.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.0",
+    "dotenv": "^4.0.0",
     "ejs": "~2.5.5",
+    "exif": "^0.6.0",
     "express": "^4.14.1",
     "express-ejs-layouts": "^2.2.0",
     "express-layout": "^0.1.0",

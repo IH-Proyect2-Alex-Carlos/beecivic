@@ -117,11 +117,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 ///////////////////////////
-// const index = require('./routes/index');
-// app.use('/', index);
-//
-// const users = require('./routes/users');
-// app.use('/users', users);
 app.use('/denuncias', denuncias);
 app.use('/', authRoutes);
 

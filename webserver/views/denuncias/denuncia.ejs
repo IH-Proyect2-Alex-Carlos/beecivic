@@ -9,6 +9,10 @@
       <span >$<%= denunciaPage.resolved %></span><br>
       <a href="<%= denunciaPage._id %>/comments/new"> AÑADIR COMENTARIO</a>
 
+      <input type="text" id="latitude" name="latitude" placeholder="Latitude" value="<%=denunciaPage.location.coordinates[1]%>">
+      <input type="text" id="longitude" name="longitude" placeholder="Longitude" value="<%=denunciaPage.location.coordinates[0]%>">
+      <div id="map"></div>
+
       <h3 >Listado Comentarios</h3>
       <section><% comentarios.forEach((comentario) => { %>
            <strong><%= comentario.username %></strong>
@@ -16,3 +20,9 @@
           <H4><%= comentario.created_at %></H4><br>
    <%  }) %>
       </section>
+      <script
+           async
+           defer
+           src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxv9S2VZwJ0CTAzD7_89OMV8ebuVZcYGg&callback">
+         </script>
+         <script type="text/javascript" src="../javascripts/paintMap.js"></script>

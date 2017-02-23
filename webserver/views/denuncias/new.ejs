@@ -97,6 +97,10 @@
             </div><!-- /input-group image-preview [TO HERE]-->
         </div>
 </div>
+<input type="text" id="latitude" name="latitude" placeholder="Latitude" >
+<input type="text" id="longitude" name="longitude" placeholder="Longitude">
+
+
 
 <!-- Button -->
 
@@ -109,7 +113,8 @@
   </div>
 
 </div>
-
+<h3>Location</h3>
+<div id="map"></div>
 </fieldset>
 
 </form>
@@ -118,3 +123,9 @@
 
 
 </div><!-- /.container -->
+<script
+     async
+     defer
+     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxv9S2VZwJ0CTAzD7_89OMV8ebuVZcYGg&callback">
+   </script>
+   <script type="text/javascript" src="../javascripts/main.js"></script>

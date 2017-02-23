@@ -33,3 +33,5 @@ bower_components
 /public/uploads
 
 ./public/uploads
+
+.env

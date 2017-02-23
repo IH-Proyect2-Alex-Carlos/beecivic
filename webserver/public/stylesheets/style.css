@@ -12,7 +12,10 @@ h1{
 
 }
 img { max-width:100%; }
-
+#map {
+  height: 500px;
+  width: 100%;
+ }
 a {
     -webkit-transition: all 150ms ease;
 	-moz-transition: all 150ms ease;

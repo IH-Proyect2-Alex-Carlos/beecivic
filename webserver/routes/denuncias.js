@@ -6,8 +6,7 @@ const { ensureLoggedIn, ensureLoggedOut } = require('connect-ensure-login');
 const Comment      = require('../models/comment');
 const Denuncia     = require('../models/denuncia');
 const User         = require('../models/user');
-var upload         = multer({ dest: './public/uploads/' });
-
+const upload         = multer({ dest: './public/uploads/' });
 ///////
 /////////////////Denuncias
 //SHOW LIST OF DENUNCIAS
@@ -25,8 +24,12 @@ router.get('/new',ensureLoggedIn('/login'), (req, res) => {
 });
 ///////
 router.post('/new',upload.single('file'),ensureLoggedIn('/login'), (req, res) => {
-    let userType = "";
+     let location = {
+       type: 'Point',
+       coordinates: [req.body.longitude, req.body.latitude]
+      };
 
+    let userType = "";
     if(req.body.radios=="1"){userType=req.user.username;} else{userType="Anonymous";}
     console.log(userType);
     const newDenuncia = new Denuncia({
@@ -35,7 +38,7 @@ router.post('/new',upload.single('file'),ensureLoggedIn('/login'), (req, res) =>
       description: req.body.descripcion,
       fullDescription: req.body.descripcionExtensa,
       imgUrl:`/uploads/${req.file.filename}`,
-      //Falta LOCATION
+      location: location,
       _creator: req.user._id
     });
     console.log(newDenuncia);
