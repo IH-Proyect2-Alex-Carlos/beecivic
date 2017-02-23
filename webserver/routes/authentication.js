@@ -33,7 +33,13 @@ router.get('/logout',ensureLoggedIn('/login'), (req, res) => {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index');
+  Denuncia
+    .find({})
+    .populate('_creator')
+    .exec( (err, denuncias) => {
+        res.render('index', { denuncias });
+    });
+  // res.render('index');
 });
 
 router.get('/map',ensureLoggedIn('/login'), (req, res) => {
