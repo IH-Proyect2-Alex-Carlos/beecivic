@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./webserver/bin/www",
+    "start": "node ./bin/www",
     "start-dev": "nodemon ./bin/www",
     "debug": "nodemon --inspect --debug ./bin/www"
   },
