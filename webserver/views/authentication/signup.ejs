@@ -1,5 +1,4 @@
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-
 <div class="container-fluid">
   <div class="row-fluid">
     <div class="col-md-12">
@@ -8,7 +7,6 @@
       </div>
     <div class="omb_login">
     	<h3 class="omb_authTitle">Sign up or <a href="/login">login</a></h3>
-
 		<div class="row omb_row-sm-offset-3">
 			<div class="col-xs-12 col-sm-6">
 			   <form class="omb_loginForm" action="" autocomplete="off" method="POST">
@@ -17,13 +15,11 @@
 						<input type="text" class="form-control" name="email" placeholder="email address">
 					</div>
 					<span class="help-block"></span>
-
           <div class="input-group">
           	<span class="input-group-addon"><i class="fa fa-user"></i></span>
           	<input  type="text" class="form-control" name="username" placeholder="username">
           </div>
           <span class="help-block"></span>
-
           <div class="input-group">
           	<span class="input-group-addon"><i class="fa fa-user"></i></span>
           	<input  type="text" class="form-control" name="city" placeholder="city">
@@ -34,7 +30,6 @@
 						<input  type="password" class="form-control" name="password" placeholder="Password">
 					</div>
           <span class="help-block"></span>
-
 					<button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
           <span class="help-block"></span>
 				</form>
@@ -44,6 +39,6 @@
     </div>
 	</div>
 </div>
-<% if (typeof(message) != "undefined") { %>
-    <div class="error-message"><%= message %></div>
-  <% } %>
+  <% if (typeof(message) != "undefined") { %>
+      <div class="error-message"><%= message %></div>
+    <% } %>

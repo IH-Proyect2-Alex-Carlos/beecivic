@@ -29,7 +29,6 @@ router.post('/login',ensureLoggedOut(), passport.authenticate('local-login', {
 router.get('/logout',ensureLoggedIn('/login'), (req, res) => {
     req.logout();
     res.redirect('/');
-
 });
 
 /* GET home page. */
@@ -40,7 +39,6 @@ router.get('/', function(req, res, next) {
     .exec( (err, denuncias) => {
         res.render('index', { denuncias });
     });
-  // res.render('index');
 });
 
 router.get('/map',ensureLoggedIn('/login'), (req, res) => {
@@ -49,8 +47,5 @@ router.get('/map',ensureLoggedIn('/login'), (req, res) => {
     .exec( (err, denunciaList) => {
         res.render('map', { denunciaList });
     });
-    // var denunciaList= Denuncia.find();
-    // console.log(denunciaList);
-    // res.render('map',{denunciaList});
 });
 module.exports = router;

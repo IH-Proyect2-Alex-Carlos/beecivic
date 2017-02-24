@@ -107,7 +107,6 @@ passport.use('local-login', new LocalStrategy((username, password, next) => {
     if (!bcrypt.compareSync(password, user.password)) {
       return next(null, false, { message: "Incorrect password" });
     }
-
     return next(null, user);
   });
 }));

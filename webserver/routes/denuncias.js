@@ -78,7 +78,6 @@ router.post('/:denuncia/comments/new', ensureLoggedIn('/login'), (req, res, next
   let userType = "";
   const id = req.params.denuncia;
   if(req.body.radios=="1"){userType=req.user.username;} else{userType="Anonymous";}
-  //countComment=Denuncia.count(id); //Valdrá para el pintado
   const newComment = new Comment({
     username : userType,
     comment: req.body.comentario,
