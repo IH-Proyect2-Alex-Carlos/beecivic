@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express            = require('express');
 const path               = require('path');
 const favicon            = require('serve-favicon');
@@ -21,7 +22,9 @@ const Denuncia           = require('./models/denuncia');
 
 const bcrypt             = require('bcrypt');
 
-mongoose.connect('mongodb://localhost:27017/denuncia2');
+
+// mongoose.connect('mongodb://localhost:27017/denuncia2');
+mongoose.connect(process.env.MONGODB_URI);
 
 const app = express();
 
