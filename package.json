@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node ./bin/www",
     "start-dev": "nodemon ./bin/www",
-    "debug": "nodemon --inspect --debug ./bin/www"
+    "debug": "nodemon --inspect --debug ./bin/www",
+    "postinstall": "bower install"
   },
   "dependencies": {
     "bcrpyt": "^2.0.0",
@@ -29,4 +30,5 @@
     "passport-local": "^1.0.0",
     "serve-favicon": "~2.3.2"
   }
+
 }
